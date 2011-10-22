@@ -1,10 +1,9 @@
 import java.util.Vector;
-import java.util.concurrent.BlockingQueue;
 
 public abstract class SchedulingQueue implements Runnable
 {
 	
-	protected BlockingQueue<Process> processQueue;
+	protected volatile Vector<Process> processQueue;
 
 	private Thread[] processors;
 	
@@ -27,8 +26,7 @@ public abstract class SchedulingQueue implements Runnable
 			processors[i].start();
 		}
 		
-		processQueue = new BlockingQueue<Process>();
-		
+		processQueue = new Vector<Process>();
 	}
 	
 	/**
