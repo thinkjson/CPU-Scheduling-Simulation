@@ -5,8 +5,8 @@ public abstract class SchedulingQueue
 	
 	private Vector<Process> processQueue;
 
-	public abstract addProcess(Process p);
-	public abstract removeProcess(Process p);
+	public abstract void addProcess(Process p);
+	public abstract void removeProcess(Process p);
 	
 	/**
 	 * Calculates the total wait time for all processes.
