@@ -1,4 +1,4 @@
-Scheduling Project
+# Scheduling Project
 
 Simulate three CPU scheduling techniques: 
 
