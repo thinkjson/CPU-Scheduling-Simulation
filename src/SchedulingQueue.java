@@ -8,6 +8,11 @@ public abstract class SchedulingQueue
 	public abstract void addProcess(Process p);
 	public abstract void removeProcess(Process p);
 	
+	public SchedulingQueue()
+	{
+		processQueue = new Vector<Process>();
+	}
+	
 	/**
 	 * Calculates the total wait time for all processes.
 	 * @return
@@ -21,15 +26,15 @@ public abstract class SchedulingQueue
 	}
 	
 	/**
-	 * Calculates the total throughput time for all processes.
+	 * Calculates the total turn-around time for all processes.
 	 * @return
 	 */
-	public int getTotalThroughputTime()	{
-		int totalThroughput = 0;
+	public int getTotalTurnaroundTime()	{
+		int totalTurnaround = 0;
 		for(Process p : processQueue) {
-			totalThroughput += p.getTroughputTime();
+			totalTurnaround += p.getTurnaroundTime();
 		}
-		return totalThroughput;
+		return totalTurnaround;
 	}
 	
 	/**

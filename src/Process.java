@@ -5,7 +5,7 @@ public class Process {
 	private int burstTime;
 	private int IOTime;
 	private int waitTime;
-	private int throughputTime;
+	private int turnaroundTime;
 	
 	private static final Random random = new Random();
 	private static final int MAX_TIME = 10000;
@@ -43,13 +43,13 @@ public class Process {
 		return waitTime;
 	}
 	
-	public void setThroughputTime(int thruput)
+	public void setTurnaroundTime(int turnaround)
 	{
-		throughputTime = thruput;
+		turnaroundTime = turnaround;
 	}
 	
-	public int getTroughputTime() {
-		return throughputTime;
+	public int getTurnaroundTime() {
+		return turnaroundTime;
 	}
 	
 }
