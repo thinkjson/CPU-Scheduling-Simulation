@@ -27,7 +27,7 @@ public abstract class SchedulingQueue
 	public int getTotalThroughputTime()	{
 		int totalThroughput = 0;
 		for(Process p : processQueue) {
-			totalThroughput += p.getThroughputTime();
+			totalThroughput += p.getTroughputTime();
 		}
 		return totalThroughput;
 	}

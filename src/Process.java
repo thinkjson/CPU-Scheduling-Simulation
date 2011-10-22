@@ -1,10 +1,14 @@
 import java.util.Random;
 
 public class Process {
-	int burstTime;
-	int IOTime;
-	static final Random random = new Random();
-	static final int MAX_TIME = 10000;
+	
+	private int burstTime;
+	private int IOTime;
+	private int waitTime;
+	private int throughputTime;
+	
+	private static final Random random = new Random();
+	private static final int MAX_TIME = 10000;
 
 	/**
 	 * Construct a process with given CPU burst and I/O time
@@ -24,4 +28,28 @@ public class Process {
 	public Process() {
 		this(random.nextInt(MAX_TIME), random.nextInt(MAX_TIME));
 	}
+	
+	public void setWaitTime(int wait)
+	{
+		waitTime = 0;
+	}
+	
+	public void addWaitTime(int waited)
+	{
+		waitTime += waited;
+	}
+	
+	public int getWaitTime() {
+		return waitTime;
+	}
+	
+	public void setThroughputTime(int thruput)
+	{
+		throughputTime = thruput;
+	}
+	
+	public int getTroughputTime() {
+		return throughputTime;
+	}
+	
 }
