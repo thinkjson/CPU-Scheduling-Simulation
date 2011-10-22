@@ -1,28 +1,37 @@
 import java.util.Vector;
 
 
-public class FairShareScheduling extends SchedulingQueue
+public class FairShareScheduling extends SchedulingQueue implements Runnable
 {
 	
-	private Vector<Integer> users;
+	private Vector<User> users;
 
-	public void addUser(int number)
+	public void addUser(User u)
 	{
-		users.add(number);
+		users.add(u);
 	}
 	
-	@Override
+	public boolean removeUser(User u)
+	{
+		return users.remove(u);
+	}
+	
 	public void addProcess(Process p)
 	{
-		// TODO Auto-generated method stub
-		
+		processQueue.add(p);
 	}
 
-	@Override
 	public void removeProcess(Process p)
 	{
-		// TODO Auto-generated method stub
+		processQueue.remove(p);
+	}
+
+	public void run()
+	{
+
 		
 	}
+	
+	
 	
 }

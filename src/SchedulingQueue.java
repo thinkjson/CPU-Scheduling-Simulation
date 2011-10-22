@@ -1,16 +1,34 @@
 import java.util.Vector;
+import java.util.concurrent.BlockingQueue;
 
-public abstract class SchedulingQueue
+public abstract class SchedulingQueue implements Runnable
 {
 	
-	private Vector<Process> processQueue;
+	protected BlockingQueue<Process> processQueue;
 
+	private Thread[] processors;
+	
 	public abstract void addProcess(Process p);
 	public abstract void removeProcess(Process p);
 	
 	public SchedulingQueue()
 	{
-		processQueue = new Vector<Process>();
+		this(1);
+	}
+	
+	public SchedulingQueue(int cpuCount)
+	{
+
+		// create 'processors' and start them
+		processors = new Thread[cpuCount];
+		for(int i = 0; i< cpuCount; i++)
+		{
+			processors[i] = new Thread(this);
+			processors[i].start();
+		}
+		
+		processQueue = new BlockingQueue<Process>();
+		
 	}
 	
 	/**
