@@ -9,6 +9,10 @@ public class Process {
 	private int PID;
 	private User user;
 	
+	public int getPID() {
+		return PID;
+	}
+
 	private static final Random random = new Random();
 	private static final int MAX_TIME = 10000;
 
