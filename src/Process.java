@@ -6,6 +6,8 @@ public class Process {
 	private int IOTime;
 	private int waitTime;
 	private int turnaroundTime;
+	private int PID;
+	private User user;
 	
 	private static final Random random = new Random();
 	private static final int MAX_TIME = 10000;
