@@ -31,6 +31,7 @@ public class Simulation {
 		if (args.length != 2) {
 			System.out.print("Usage: java Simulation [algorithm] [numberOfProcesses]\n" +
 					"Where algorithm is one of: \n1 - Multi-Level Feedback Queue, 2 - Lottery Scheduler, 3 - Fair Share Sscheduler");
+			return;
 		}
 		
 		int cpuCount = 4;

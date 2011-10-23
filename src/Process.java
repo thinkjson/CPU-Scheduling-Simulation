@@ -7,7 +7,7 @@ public class Process {
 	private int waitTime;
 	private int turnaroundTime;
 	private int PID;
-	private User user;
+	private int user;
 	
 	public int getPID() {
 		return PID;
@@ -35,6 +35,22 @@ public class Process {
 		this(random.nextInt(MAX_TIME), random.nextInt(MAX_TIME));
 	}
 	
+	public void setBurstTime(int time) {
+		burstTime = time;
+	}
+	
+	public int getBurstTime() {
+		return burstTime;
+	}
+	
+	public void setIOTime(int time) {
+		IOTime = time;
+	}
+	
+	public int getIOTime() {
+		return IOTime;
+	}
+	
 	public void setWaitTime(int wait) {
 		waitTime = 0;
 	}
@@ -55,15 +71,11 @@ public class Process {
 		return turnaroundTime;
 	}
 	
-	public boolean isUser(User u) {
-		return u.equals(user);
-	}
-	
-	public void setUser(User u) {
+	public void setUser(int u) {
 		user = u;
 	}
 	
-	public User getUser() {
+	public int getUser() {
 		return user;
 	}
 	

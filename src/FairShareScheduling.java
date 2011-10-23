@@ -2,10 +2,11 @@ import java.util.Vector;
 
 
 public class FairShareScheduling extends SchedulingQueue {
+
+	public static final int DEFAULT_USER_COUNT = 5;
 	
-	// all users involved
-	private Vector<User> users;
-	
+	private int userCount;
+
 	/**
 	 * Creates a new FairShare scheduler.
 	 * @param cpuCount
@@ -13,25 +14,9 @@ public class FairShareScheduling extends SchedulingQueue {
 	 */
 	public FairShareScheduling(int cpuCount, int quant) {
 		super(cpuCount, quant);
+		userCount = DEFAULT_USER_COUNT;
 	}
 
-	/**
-	 * Adds a user to the system.
-	 * @param u
-	 */
-	public void addUser(User u) {
-		users.add(u);
-	}
-	
-	/**
-	 * Removes a user from the system.
-	 * @param u
-	 * @return
-	 */
-	public boolean removeUser(User u) {
-		return users.remove(u);
-	}
-	
 	public void addProcess(Process p) {
 		processQueue.add(p);
 	}
@@ -44,13 +29,8 @@ public class FairShareScheduling extends SchedulingQueue {
 	 * Scheduler "step"
 	 */
 	public void run() {
-		int splitQuantum = users.size() / quantum;
-		
-		int processCount;
-		int userQuantum;
-		for(User u : users) {
 
-		}
+
 
 	}
 	
