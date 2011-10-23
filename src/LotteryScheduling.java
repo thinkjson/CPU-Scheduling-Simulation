@@ -2,9 +2,7 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.Vector;
 
-
-public class LotteryScheduling extends SchedulingQueue
-{
+public class LotteryScheduling extends SchedulingQueue {
 	
 	static final Random random = new Random();
 	
@@ -19,23 +17,18 @@ public class LotteryScheduling extends SchedulingQueue
 	}
 
 	@Override
-	public void addProcess(Process p)
-	{
+	public void addProcess(Process p) {
 		tickets.put(p.getPID(), new Vector<Integer>());
 	}
 
 	@Override
-	public void removeProcess(Process p)
-	{
-		// TODO Auto-generated method stub
-		
+	public void removeProcess(Process p) {
+
 	}
 
 	@Override
-	public void run()
-	{
-		// TODO Auto-generated method stub
-		
+	public void run() {
+
 	}
 	
 }

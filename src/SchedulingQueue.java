@@ -1,7 +1,6 @@
 import java.util.Vector;
 
-public abstract class SchedulingQueue implements Runnable
-{
+public abstract class SchedulingQueue implements Runnable {
 	
 	protected int quantum;
 	
@@ -12,13 +11,11 @@ public abstract class SchedulingQueue implements Runnable
 	public abstract void addProcess(Process p);
 	public abstract void removeProcess(Process p);
 	
-	public SchedulingQueue(int cpuCount, int quant)
-	{
+	public SchedulingQueue(int cpuCount, int quant) {
 
 		// create 'processors' and start them
 		processors = new Thread[cpuCount];
-		for(int i = 0; i< cpuCount; i++)
-		{
+		for(int i = 0; i< cpuCount; i++) {
 			processors[i] = new Thread(this);
 			processors[i].start();
 		}

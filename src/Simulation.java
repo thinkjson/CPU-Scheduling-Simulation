@@ -13,17 +13,21 @@ public class Simulation {
 	}
 	
 	public void start() {
+		
 		Process process;
+		
 		for (int i = 0; i < numberOfProcesses; i++) {
 			process = new Process();
 			this.queue.addProcess(process);
 		}
+		
 	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
 		if (args.length != 2) {
 			System.out.print("Usage: java Simulation [algorithm] [numberOfProcesses]\n" +
 					"Where algorithm is one of: \n1 - Multi-Level Feedback Queue, 2 - Lottery Scheduler, 3 - Fair Share Sscheduler");

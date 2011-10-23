@@ -35,13 +35,11 @@ public class Process {
 		this(random.nextInt(MAX_TIME), random.nextInt(MAX_TIME));
 	}
 	
-	public void setWaitTime(int wait)
-	{
+	public void setWaitTime(int wait) {
 		waitTime = 0;
 	}
 	
-	public void addWaitTime(int waited)
-	{
+	public void addWaitTime(int waited) {
 		waitTime += waited;
 	}
 	
@@ -49,13 +47,24 @@ public class Process {
 		return waitTime;
 	}
 	
-	public void setTurnaroundTime(int turnaround)
-	{
+	public void setTurnaroundTime(int turnaround) {
 		turnaroundTime = turnaround;
 	}
 	
 	public int getTurnaroundTime() {
 		return turnaroundTime;
+	}
+	
+	public boolean isUser(User u) {
+		return u.equals(user);
+	}
+	
+	public void setUser(User u) {
+		user = u;
+	}
+	
+	public User getUser() {
+		return user;
 	}
 	
 }
