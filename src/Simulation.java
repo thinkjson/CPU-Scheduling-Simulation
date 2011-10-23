@@ -29,17 +29,21 @@ public class Simulation {
 					"Where algorithm is one of: \n1 - Multi-Level Feedback Queue, 2 - Lottery Scheduler, 3 - Fair Share Sscheduler");
 		}
 		
+		int cpuCount = 4;
+		int quantum = 10;
+		
 		int algorithm = Integer.parseInt(args[0]);
+		
 		Simulation simulation;
 		switch (algorithm) {
 		case 1:
-			simulation = new Simulation(new MultilevelFeedbackQueue());
+			simulation = new Simulation(new MultilevelFeedbackQueue(cpuCount, quantum));
 			break;
 		case 2:
-			simulation = new Simulation(new LotteryScheduling());
+			simulation = new Simulation(new LotteryScheduling(cpuCount, quantum));
 			break;
 		default:
-			simulation = new Simulation(new FairShareScheduling());
+			simulation = new Simulation(new FairShareScheduling(cpuCount, quantum));
 			break;
 		}
 		

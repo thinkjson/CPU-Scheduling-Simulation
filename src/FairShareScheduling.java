@@ -1,9 +1,14 @@
 import java.util.Vector;
 
 
-public class FairShareScheduling extends SchedulingQueue implements Runnable
+public class FairShareScheduling extends SchedulingQueue
 {
 	
+	public FairShareScheduling(int cpuCount, int quant)
+	{
+		super(cpuCount, quant);
+	}
+
 	private Vector<User> users;
 
 	public void addUser(User u)
@@ -20,7 +25,7 @@ public class FairShareScheduling extends SchedulingQueue implements Runnable
 	{
 		processQueue.add(p);
 	}
-
+	
 	public void removeProcess(Process p)
 	{
 		processQueue.remove(p);
@@ -29,9 +34,6 @@ public class FairShareScheduling extends SchedulingQueue implements Runnable
 	public void run()
 	{
 
-		
 	}
-	
-	
 	
 }

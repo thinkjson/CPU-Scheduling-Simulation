@@ -13,8 +13,8 @@ public class LotteryScheduling extends SchedulingQueue
 	/**
 	 * 
 	 */
-	public LotteryScheduling() {
-		super();
+	public LotteryScheduling(int cpuCount, int quant) {
+		super(cpuCount, quant);
 		tickets = new HashMap<Integer, Vector<Integer>>();
 	}
 

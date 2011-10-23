@@ -3,19 +3,16 @@ import java.util.Vector;
 public abstract class SchedulingQueue implements Runnable
 {
 	
+	protected int quantum;
+	
 	protected volatile Vector<Process> processQueue;
-
+	
 	private Thread[] processors;
 	
 	public abstract void addProcess(Process p);
 	public abstract void removeProcess(Process p);
 	
-	public SchedulingQueue()
-	{
-		this(1);
-	}
-	
-	public SchedulingQueue(int cpuCount)
+	public SchedulingQueue(int cpuCount, int quant)
 	{
 
 		// create 'processors' and start them
@@ -27,6 +24,10 @@ public abstract class SchedulingQueue implements Runnable
 		}
 		
 		processQueue = new Vector<Process>();
+		
+		// set the time quantum
+		quantum = quant;
+		
 	}
 	
 	/**

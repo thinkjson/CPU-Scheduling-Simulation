@@ -1,8 +1,11 @@
-import java.util.Vector;
-
 
 public class MultilevelFeedbackQueue extends SchedulingQueue
 {
+
+	public MultilevelFeedbackQueue(int cpuCount, int quant)
+	{
+		super(cpuCount, quant);
+	}
 
 	@Override
 	public void addProcess(Process p)
