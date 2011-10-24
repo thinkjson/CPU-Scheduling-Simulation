@@ -1,9 +1,13 @@
+import java.util.Random;
+
 
 public class Simulation {
 	
 	SchedulingQueue queue;
 	
 	int numberOfProcesses; 
+	
+	private static final Random rnd = new Random();
 
 	/**
 	 * 
@@ -18,7 +22,10 @@ public class Simulation {
 		
 		for (int i = 0; i < numberOfProcesses; i++) {
 			process = new Process();
+			process.setBurstTime(rnd.nextInt(90) + 10);
 			this.queue.addProcess(process);
+			
+			System.out.println("Adding process");
 		}
 		
 	}

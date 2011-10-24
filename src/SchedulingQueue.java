@@ -8,11 +8,15 @@ public abstract class SchedulingQueue implements Runnable {
 	
 	private Thread[] processors;
 	
+	protected boolean isRunning;
+	
 	public abstract void addProcess(Process p);
 	public abstract void removeProcess(Process p);
 	
 	public SchedulingQueue(int cpuCount, int quant) {
 
+		isRunning = false;
+		
 		// create 'processors' and start them
 		processors = new Thread[cpuCount];
 		for(int i = 0; i< cpuCount; i++) {

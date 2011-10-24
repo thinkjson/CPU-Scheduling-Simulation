@@ -43,6 +43,10 @@ public class Process {
 		return burstTime;
 	}
 	
+	public void changeBurstTime(int time) {
+		burstTime += time;
+	}
+	
 	public void setIOTime(int time) {
 		IOTime = time;
 	}
